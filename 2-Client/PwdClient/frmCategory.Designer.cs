@@ -193,7 +193,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.picClose);
             this.Name = "frmCategory";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "frmCategory";
+            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             this.ResumeLayout(false);

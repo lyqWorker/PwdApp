@@ -10,7 +10,7 @@ namespace PwdClient
     static class Program
     {
         public static string HTTPServer = ConfigurationManager.AppSettings["url"];
-        public static string uid = string.Empty;
+        public static string UserId;
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>

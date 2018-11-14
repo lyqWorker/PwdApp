@@ -10,6 +10,20 @@ namespace Contract
     {
         public static List<string> IllegalList = new List<string>() { "or", "||", "1=1", "where" };
     }
+    public class LoginUser
+    {
+        public string UserId { get; set; }
+        public string LoginKey { get; set; }
+    }
+    public class PwdInfo
+    {
+        public int PID { get; set; }
+        public string Title { get; set; }
+        public string CreateUser { get; set; }
+        public string Description { get; set; }
+        public string SecrecyLevel { get; set; }
+        public string Category { get; set; }
+    }
     public class HttpResponse
     {
         public ResponseState ResState { get; set; }

@@ -1,13 +1,16 @@
-﻿using PwdClient.UC;
+﻿using Contract;
+using PwdClient.UC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utils;
 
 namespace PwdClient
 {
@@ -15,10 +18,24 @@ namespace PwdClient
     {
         //左侧菜单列表
         private List<string> MenuList = new List<string>() { "日志查看", "口令修改", "密码列表" };
+
+        //密码本
+        public List<PwdInfo> PwdList = new List<PwdInfo>();
+        private string GetPwdListUrl;
+
         public frmMain()
         {
             InitializeComponent();
             InitStyle();
+            GetPwdList();
+        }
+
+        public void GetPwdList()
+        {
+            GetPwdListUrl = Path.Combine(Program.HTTPServer, "api/Pwd/GetPwdList");
+            string param = string.Format(@"?UserId={0}", Program.UserId);
+            string url = GetPwdListUrl + param;
+            PwdList = HTTPUtils.GetDataList<PwdInfo>(url);
         }
 
         private void InitStyle()

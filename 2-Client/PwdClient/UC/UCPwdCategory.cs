@@ -53,42 +53,16 @@ namespace PwdClient.UC
 
         private void Category_Click(object sender, EventArgs e)
         {
-            switch (CategoryName)
-            {
-                case "云服务器":
-                    {
+            //关闭类别窗口
+            frmCategory frmCategory = (frmCategory)Parent.Parent;
+            frmCategory.Hide();
+            //开启添加窗口
+            frmAddPwd frm = new frmAddPwd();
+            frm.CategroyName = CategoryName;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
 
-                        break;
-                    }
-                case "通用网站":
-                    {
-
-                        break;
-                    }
-                case "微信":
-                    {
-
-                        break;
-                    }
-                case "支付宝":
-                    {
-                        break;
-                    }
-                case "银行卡":
-                    {
-                        break;
-                    }
-                case "邮箱":
-                    {
-                        break;
-                    }
-                case "GitHub":
-                    {
-                        break;
-                    }
-                default:
-                    break;
-            }
+            frmCategory.Dispose();
         }
     }
 }

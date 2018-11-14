@@ -53,6 +53,9 @@
     <Compile Include="Manager.cs">
       <DependentUpon>PwdCenter.tt</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs">
+      <DependentUpon>PwdCenter.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PwdCenter.Context.cs">
       <AutoGen>True</AutoGen>
@@ -69,34 +72,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PwdCenter.edmx</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="PwdCenter.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PwdCenter.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <Compile Include="PwdList.cs">
+      <DependentUpon>PwdCenter.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
+    <EntityDeploy Include="PwdCenter.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PwdCenter.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="PwdCenter.edmx.diagram">
       <DependentUpon>PwdCenter.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="PwdCenter.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PwdCenter.Context.cs</LastGenOutput>
       <DependentUpon>PwdCenter.edmx</DependentUpon>
+      <LastGenOutput>PwdCenter.Context.cs</LastGenOutput>
     </Content>
     <Content Include="PwdCenter.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PwdCenter.edmx</DependentUpon>
       <LastGenOutput>PwdCenter.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

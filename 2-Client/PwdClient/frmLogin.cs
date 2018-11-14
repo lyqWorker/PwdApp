@@ -86,6 +86,7 @@ namespace PwdClient
                         {
                             //验证成功后，关闭登录窗口
                             DialogResult = DialogResult.OK;
+                            Program.UserId = res.ResContent;
                             Close();
                             Dispose();
                         }

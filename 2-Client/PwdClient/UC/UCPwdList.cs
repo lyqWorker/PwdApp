@@ -9,62 +9,39 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utils;
 using System.Threading;
+using Contract;
+using System.IO;
 
 namespace PwdClient.UC
 {
     public partial class UCPwdList : UserControl
     {
-        //private int doPaintTop = 0;
-        //private int doPaintBody = 0;
-
+       
         public UCPwdList()
         {
             InitializeComponent();
         }
-
-        private void panelTop_Paint(object sender, PaintEventArgs e)
+        public void BindData(List<PwdInfo> list)
         {
-            //if (doPaintTop == 0)
-            //{
-            //    ControlPaint.DrawBorder(e.Graphics, panelTop.ClientRectangle,
-            //                 Color.FromArgb(12, 169, 235), 1, ButtonBorderStyle.Solid,
-            //                 Color.FromArgb(12, 169, 235), 1, ButtonBorderStyle.Solid,
-            //                 Color.FromArgb(12, 169, 235), 1, ButtonBorderStyle.Solid,
-            //                 Color.FromArgb(12, 169, 235), 1, ButtonBorderStyle.Solid);
-            //    doPaintTop += 1;
-            //}
+            dgvPwdList.DataSource = list;
         }
-
-        private void panelBody_Paint(object sender, PaintEventArgs e)
-        {
-            //if (doPaintBody == 0)
-            //{
-            //    ControlPaint.DrawBorder(e.Graphics, panelBody.ClientRectangle,
-            //                  Color.FromArgb(12, 169, 235), 1, ButtonBorderStyle.Solid,
-            //                  Color.FromArgb(12, 169, 235), 1, ButtonBorderStyle.Solid,
-            //                  Color.FromArgb(12, 169, 235), 1, ButtonBorderStyle.Solid,
-            //                  Color.FromArgb(12, 169, 235), 1, ButtonBorderStyle.Solid);
-
-            //    doPaintBody += 1;
-            //}
-        }
-
+        
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmCategory frm = new frmCategory();
             frm.StartPosition = FormStartPosition.CenterScreen;
-           // frm.Opacity = 0;
             frm.Show();
-            
-
-            //for (int i = 0; i <= 10; i++)
-            //{
-            //    Thread.Sleep(15);
-            //    Application.DoEvents();
-            //    frm.Opacity = i / 10;
-            //}
         }
 
-       
+        private void dgvPwdList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            dgvPwdList.Rows[e.RowIndex].Cells["RowNo"].Value = e.RowIndex + 1;
+        }
+
+        private void UCPwdList_Load(object sender, EventArgs e)
+        {
+            var main = (frmMain)Parent.Parent;
+            BindData(main.PwdList);
+        }
     }
 }

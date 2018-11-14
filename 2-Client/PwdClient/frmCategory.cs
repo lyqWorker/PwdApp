@@ -19,6 +19,7 @@ namespace PwdClient
             //去除边框
             InitStyle(this);
         }
+
         #region 宽口关闭、最大、最小化
         private void picClose_Click(object sender, EventArgs e)
         {

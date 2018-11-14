@@ -4,8 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5702d58b47774f9a9c0d05598e2f76e8" Name="Diagram1">
-        <EntityTypeShape EntityType="PwdSystemCenterModel.Manager" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="afeff85b117a4482ad92477690b605bf" Name="Diagram1">
+        <EntityTypeShape EntityType="PwdSystemCenterModel.Manager" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PwdSystemCenterModel.Menu" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PwdSystemCenterModel.PwdList" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

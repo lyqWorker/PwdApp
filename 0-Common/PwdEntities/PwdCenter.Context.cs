@@ -26,5 +26,7 @@ namespace PwdEntities
         }
     
         public virtual DbSet<Manager> Managers { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; }
+        public virtual DbSet<PwdList> PwdLists { get; set; }
     }
 }
